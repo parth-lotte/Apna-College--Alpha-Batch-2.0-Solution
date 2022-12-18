@@ -8,7 +8,7 @@ public class AOS {
         float area= side*side;
         
         System.out.println("Area is\n" + area);
-    
+    //  ended
     }
     
 }
