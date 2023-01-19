@@ -32,6 +32,12 @@ public class introArraylist{
         System.out.println(arr);
         
         System.out.println(arr.contains(4));
+        System.out.println();
+        System.out.println(arr.size());
 
+        for (int i = 0; i <arr.size(); i++) {
+            System.out.println(arr.get(i));
+            
+        }
     }
 }
