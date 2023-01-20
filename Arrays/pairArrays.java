@@ -7,7 +7,7 @@ public class pairArrays
         for(int i=0;i<numbers.length;i++)
         {
            int curr=numbers[i];
-            for(int j=i+1;j<numbers.length;j++)
+            for(int j=i+1;j<numbers.length;j+-+)
             {
                 System.out.print("("+curr+","+numbers[j]+")");
             }
