@@ -7,20 +7,20 @@ public class optimizedContainerWithmostwater {
         int lp=0;
         int ep=height.size()-1;
 
-        while(lp<rp)
+        while(lp<ep)
         {
             int ht=Math.min(height.get(lp),height.get(ep));
-            int width= rp-lp;
+            int width= ep-lp;
             int currWater= ht*width;
             maxWater=Math.max(maxWater,currWater);
             
         }
-        if(height.get(lp)<height.get(rp))
+        if(height.get(lp)<height.get(ep))
         {
             lp++;
         }
         else{
-            rp--;
+            ep--;
         }
     }
 
