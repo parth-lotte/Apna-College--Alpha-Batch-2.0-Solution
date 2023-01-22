@@ -49,20 +49,35 @@ public class linkedList{
         }
         System.out.println();
     }
+    public void add(int index, int data)
+    {
+        Node newNode= new Node(data);
+        Node temp = head;
+        int i=0;
+        while(i<index-1)
+        {
+            System.out.println(temp.data);
+            temp=temp.next;
+            i++;
+        }
+        // i=index-1, temp->prev
 
-
+        newNode.next=temp.next;
+        temp.next=newNode;
+    }
     public static void main(String args[])
     {
         linkedList ll= new linkedList();
-        ll.printLink();
+        // ll.printLink();
         ll.firstAdd(2);
-        ll.printLink();
+        // ll.printLink();
         ll.firstAdd(1);
-        ll.printLink();
+        // ll.printLink();
+        
         ll.lastAdd(3);
-        ll.printLink();
+        // ll.printLink();
         ll.lastAdd(4);
+        ll.add(2, 40);
         ll.printLink();
     }
-
 } 
