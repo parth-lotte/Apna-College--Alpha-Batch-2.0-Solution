@@ -1,3 +1,4 @@
+import java.util.*;
 public class optimizedContainerWithmostwater {
     // using two pointers approach
 
@@ -22,6 +23,7 @@ public class optimizedContainerWithmostwater {
         else{
             ep--;
         }
+        return maxWater;
     }
 
     public static void main(String args[])
@@ -36,7 +38,6 @@ public class optimizedContainerWithmostwater {
         height.add(8);
         height.add(3);
         height.add(7);
-        System.out.println(
-            storeWater(height));
+        System.out.println(storeWater(height));
     }
 }
