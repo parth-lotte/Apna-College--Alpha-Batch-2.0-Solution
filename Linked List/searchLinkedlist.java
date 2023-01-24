@@ -117,7 +117,7 @@ public class searchLinkedlist{
         return val;
     }
 
-
+          /*KEY SEARCH using linear search */
     public int itrSearch(int key)
     {
         Node temp= head;
@@ -134,6 +134,50 @@ public class searchLinkedlist{
         }
     return -1;   // key not found
     }
+
+    /* KEY SEARCH USING RECURSIVE METHOD */
+public int helper(Node head, int key)
+{
+    if(head==null)
+    {
+        return -1;
+
+    }
+    if(head.data==key)
+    {
+        return 0;
+
+    }
+    int idx= helper(head.next, key);
+    if(idx==-1)
+    {
+        return -1;
+    }
+    return idx+1;
+}
+    public int recSearch(int key)
+    {
+        return helper(head,key);
+    }
+      public void reverseLinkedlist()
+      {
+        if(head==null)
+        {
+            System.out.println("Empty strings");
+            
+        }
+        Node prev= null;
+        Node curr=head;
+        Node next;
+        while(curr!=null)
+        {
+            next=curr.next;            // reversing linked list here
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+        }
+        head=prev;
+      }
     public static void main(String args[])
     {
         searchLinkedlist ll= new searchLinkedlist();
@@ -154,6 +198,12 @@ public class searchLinkedlist{
         ll.removeLast();
         ll.printLink();
 
-        System.out.println("Key found at "+ ll.itrSearch(3));
+        System.out.println("Key found at "+  ll.itrSearch(3));
+        System.out.println();
+        System.out.println("Key found at "+  ll.recSearch(3));
+        System.out.println();
+
+        ll.reverseLinkedlist();
+        ll.printLink();
     }
 } 
