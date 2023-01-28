@@ -272,13 +272,13 @@ public int helper(Node head, int key)
     {
         searchLinkedlist ll= new searchLinkedlist();
     //     // ll.printLink();
-    //     ll.firstAdd(2);
+        ll.firstAdd(2);
     //     // ll.printLink();
-    //     ll.firstAdd(1);
+        ll.firstAdd(1);
     //     // ll.printLink();  
-    //     ll.lastAdd(3);
+        ll.lastAdd(3);
     //     // ll.printLink();
-    //     ll.lastAdd(4);
+        ll.lastAdd();
     //     ll.add(2, 40);
     //     ll.printLink();
     //     //System.out.println(ll.size);
@@ -299,12 +299,12 @@ public int helper(Node head, int key)
     // //     ll.printLink();
 
     // System.out.println(ll.checkPalindrome());
-    System.out.println(ll.isCycle());
+    // System.out.println(ll.isCycle());
 
-    head= new Node(1);
-    head.next= new Node(2);
-    head.next.next= new Node(3);
-    head.next.next.next= head;
+    // head= new Node(1);
+    // head.next= new Node(2);
+    // head.next.next= new Node(3);
+    // head.next.next.next= head;
     System.out.println(isCycle());
     }
 } 
