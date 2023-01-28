@@ -178,6 +178,78 @@ public int helper(Node head, int key)
         }
         head=prev;
       }
+      public void deletefromEnd(int n)
+      {
+        // calculate size
+        int sz=0;
+        Node temp=head;
+        while(temp!=null)
+        {
+            temp=temp.next;
+            sz++;
+        }
+        if(n==sz)
+        {
+            head=head.next;    // remove first
+            return;
+        }
+        int i=1;
+        int iTofind=sz-n;
+        Node prev=head;
+        while(i<iTofind)
+        {
+            prev=prev.next;
+            i++;
+        }
+        prev.next=prev.next.next;
+        return;
+    }
+
+    public Node findMid(Node head)
+    {
+        Node slow= head;
+        Node fast= head;
+        while(fast!=null && fast.next!=null)  // checks for Mid
+        {
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        return slow;   // slow is my mid node
+    }
+    public boolean checkPalindrome()
+    {
+        if(head==null || head.next==null)
+        {
+            return true;
+        }
+        
+   /// step 1 = find mid node
+        Node midNode=findMid(head);
+        //Step 2= reverse 2nd half
+            Node prev= null;
+            Node curr= midNode;
+            Node next;
+            while(curr!=null)
+            {
+                next=curr.next;
+                curr.next=prev;
+                prev=curr;
+                curr=next;
+            }
+            // Step 3=Check left half & right half
+            Node right=prev;
+            Node left= head;
+            while(right!=null)
+            {
+                if(left.data!=right.data)
+                {
+                return false;
+                }
+                left=left.next;
+                right=right.next;
+            }
+            return true;
+    }
     public static void main(String args[])
     {
         searchLinkedlist ll= new searchLinkedlist();
@@ -193,17 +265,21 @@ public int helper(Node head, int key)
         ll.printLink();
         //System.out.println(ll.size);
         System.out.println();
-        ll.removeFirst();
-        ll.printLink();
-        ll.removeLast();
-        ll.printLink();
+        // ll.removeFirst();
+        // ll.printLink();
+        // // ll.removeLast();
+        // ll.printLink();
 
-        System.out.println("Key found at "+  ll.itrSearch(3));
-        System.out.println();
-        System.out.println("Key found at "+  ll.recSearch(3));
-        System.out.println();
+        // System.out.println("Key found at "+  ll.itrSearch(3));
+        // System.out.println();
+        // System.out.println("Key found at "+  ll.recSearch(3));
+        // System.out.println();
 
-        ll.reverseLinkedlist();
-        ll.printLink();
+    //     ll.reverseLinkedlist();
+    //     ll.printLink();
+    //     ll.deletefromEnd(3);
+    //     ll.printLink();
+
+    System.out.println(ll.checkPalindrome());
     }
 } 
