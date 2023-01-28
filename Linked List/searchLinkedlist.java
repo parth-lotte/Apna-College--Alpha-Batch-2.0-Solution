@@ -250,36 +250,61 @@ public int helper(Node head, int key)
             }
             return true;
     }
+
+
+        // Detecting loop in a linked list
+
+        public static boolean isCycle(){
+            Node slow= head;
+            Node fast= head;
+            while(fast!=null && fast.next!=null)
+            {
+                slow=slow.next;
+                fast=fast.next.next;
+                if(slow==fast){
+                    System.out.println("Cycle exists");
+                    return true;
+                }
+            }
+            return false;
+        }
     public static void main(String args[])
     {
         searchLinkedlist ll= new searchLinkedlist();
-        // ll.printLink();
-        ll.firstAdd(2);
-        // ll.printLink();
-        ll.firstAdd(1);
-        // ll.printLink();  
-        ll.lastAdd(3);
-        // ll.printLink();
-        ll.lastAdd(4);
-        ll.add(2, 40);
-        ll.printLink();
-        //System.out.println(ll.size);
-        System.out.println();
-        // ll.removeFirst();
-        // ll.printLink();
-        // // ll.removeLast();
-        // ll.printLink();
-
-        // System.out.println("Key found at "+  ll.itrSearch(3));
-        // System.out.println();
-        // System.out.println("Key found at "+  ll.recSearch(3));
-        // System.out.println();
-
-    //     ll.reverseLinkedlist();
+    //     // ll.printLink();
+    //     ll.firstAdd(2);
+    //     // ll.printLink();
+    //     ll.firstAdd(1);
+    //     // ll.printLink();  
+    //     ll.lastAdd(3);
+    //     // ll.printLink();
+    //     ll.lastAdd(4);
+    //     ll.add(2, 40);
     //     ll.printLink();
-    //     ll.deletefromEnd(3);
-    //     ll.printLink();
+    //     //System.out.println(ll.size);
+    //     System.out.println();
+    //     // ll.removeFirst();
+    //     // ll.printLink();
+    //     // // ll.removeLast();
+    //     // ll.printLink();
 
-    System.out.println(ll.checkPalindrome());
+    //     // System.out.println("Key found at "+  ll.itrSearch(3));
+    //     // System.out.println();
+    //     // System.out.println("Key found at "+  ll.recSearch(3));
+    //     // System.out.println();
+
+    // //     ll.reverseLinkedlist();
+    // //     ll.printLink();
+    // //     ll.deletefromEnd(3);
+    // //     ll.printLink();
+
+    // System.out.println(ll.checkPalindrome());
+    System.out.println(ll.isCycle());
+
+    head= new Node(1);
+    head.next= new Node(2);
+    head.next.next= new Node(3);
+    head.next.next.next= head;
+    System.out.println(isCycle());
     }
 } 
