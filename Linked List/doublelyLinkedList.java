@@ -51,6 +51,23 @@ public class doublelyLinkedList {
         head.prev=null;
         return val;
     }
+
+    public void reverse(){
+        Node curr=head;
+        Node prev=null;
+        Node next;
+
+        while(curr!=null)
+        {
+            next=curr.next;
+            curr.next=prev;
+            curr.prev=next;
+            prev=curr;
+            curr=next;
+        }
+        head=prev;
+
+    }    
     public static void main(String args[])
     {
         doublelyLinkedList ll= new doublelyLinkedList();
@@ -60,8 +77,11 @@ public class doublelyLinkedList {
 
 
         ll.print();
-        ll.removeFirst();
+        ll.reverse();
         ll.print();
+        // ll.removeFirst();
+        // ll.print();
+        System.out.println();
         System.out.println(ll.size);
     }
 }
