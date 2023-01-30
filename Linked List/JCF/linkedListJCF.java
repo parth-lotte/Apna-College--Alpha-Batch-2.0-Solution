@@ -14,5 +14,7 @@ public class linkedListJCF {
         //remove
         ll.removeLast();
         System.out.println(ll);
+        ll.removeFirst();
+        System.out.println(ll);
     }
 }

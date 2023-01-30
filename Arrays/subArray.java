@@ -9,7 +9,7 @@ public class subArray {
             for(int j=i; j<number.length;j++)
             {
                 int end=j;
-                for(int k =0;k<number.length;k++)
+                for(int k =start;k<end;k++)
                 {
                     System.out.print(number[k]+" ");
                 }
