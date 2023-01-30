@@ -66,7 +66,6 @@ public class mergeSortLinkedList {
         }
     
     // We will solve this into 3 steps 
-
    // S1- find the mid of the linked list 
         Node mid= getMid();
 
@@ -75,12 +74,8 @@ public class mergeSortLinkedList {
         mid.next= null;    // list divided into left and right 
         Node newLeft= mergeSort(head);
         Node newRight= mergeSort(rightHead);
-        
-        //merge 
-
+                //merge 
         return merge(newLeft,newRight);
     }
     public static void main(String args[])
-
-    
-}
+    }
