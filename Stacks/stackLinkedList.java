@@ -51,17 +51,13 @@ public class stackLinkedList {
                 return -1;
             }
 
-            // else 
-            // {
+           
                 int top= head.data;
                 head=head.next;
                 return top;
             // }
         }
-
         // peek
-
-
         public static int peek()
         {
             if(isEmpty())
@@ -72,10 +68,7 @@ public class stackLinkedList {
         }
 
     }
-    
-    
-
-        public static void main(String args[])
+               public static void main(String args[])
         {
             Stack s= new Stack();
             s.push(1);
