@@ -1,6 +1,8 @@
 import java.util.Stack;
 import java.util.*;
 public class stackArraylist {
+
+    
     static class stack {
 
         static ArrayList<Integer> list = new ArrayList <>();
@@ -29,14 +31,15 @@ public class stackArraylist {
             }
             // poping data
 
-            public static void peek()
+            public static int peek()
             {
                 int top= list.get(list.size()-1);
-                //    return top;
+                   return top;
             }
 
 
-        }
+        }  
+
 
         public static void main(String args[])
         {
