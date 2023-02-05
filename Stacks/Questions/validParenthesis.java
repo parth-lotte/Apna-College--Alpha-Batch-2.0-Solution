@@ -1,46 +1,42 @@
-import java.util.Stack;
+class Solution {
+    public boolean isValid(String s) {
 
-public class validParenthesis {
+        Stack <Character> S= new Stack<>();
 
-public static boolean isValid(String str)
-Stack <Integer> s= new Stack<>();
-
-    for (int i = 0; i < str.length; i++) {
-        char ch=str.charAt(i);
-
-        if(ch=='(' || ch=='{' || ch=='[')  // opening
+        for(int i=0; i<s.length(); i++)
         {
-            s.push(ch);
-        }
-        else {
-            if(s.isEmpty())
-            {
-                return false;
-            }
+            char ch= s.charAt(i);
 
-            if(s.peek()=='(' && ch==')' || s.peek()=='[' && ch==']' || s.peek()=='{' && ch=='}'  )
-            s.pop();   /// Closing
+            if(ch=='(' || ch=='[' || ch=='{' )  // opening
+            {
+                S.push(ch);
+            }
+            else 
+            {
+                if(s.isEmpty())
+                {
+                    return false;
+                }
+
+                if(S.peek()=='(' && ch==')' || S.peek()=='[' && ch==']' || S.peek()=='{' && ch=='}')
+                {
+                    S.pop();  // closing 
+                }
+                else
+                {
+                    return false;
+                }
+            }
         }
-        else 
+
+        if(S.isEmpty())
+        {
+            return true;
+        }
+        else
         {
             return false;
         }
         
-        
     }
-    if(s.isEmpty())
-        {
-            return true;
-        }
-        else 
-        return false;
-
-}
-
-    public static void main(String args[])
-    {
-        String sts= "({})[]";
-
-    }
-    
 }
