@@ -24,7 +24,7 @@ public class simplifypath {
                 }
                 while(!s.isEmpty())
                 {
-                    res.insert(0, s.pop()).insert(0, "/")
+                    res.insert(0, s.pop()).insert(0, "/");
                 }
             }
      return res.toString();       
