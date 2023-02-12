@@ -15,7 +15,7 @@ Queue<Character> q= new LinkedList<>();
             freq[ch-'a']++; // checking for the frequency 
 
             while(!q.isEmpty() && freq[q.peek()-'a']>1)
-            {
+            {           
                 q.remove();
             }
             if(q.isEmpty())
