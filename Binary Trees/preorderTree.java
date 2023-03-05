@@ -45,6 +45,30 @@ public class preorderTree {
             preorder(root.left);
             preorder(root.right);
         }
+
+        // Inorder Traversal
+        public static void Inorder(Node root)
+        {
+            if(root==null)
+            {
+                return ;
+            }
+            preorder(root.left);
+            System.out.println(root.data+ " ");
+            preorder(root.right);
+        }
+        public static void Postorder(Node root)
+        {
+            if(root==null)
+            {
+                return ;
+            }
+            Postorder(root.left);
+            Postorder(root.right);
+            System.out.println(root.data+ " ");
+            
+        }
+        
     }
     public static void main(String args[])
     {
@@ -55,7 +79,10 @@ public class preorderTree {
         System.out.println();
 
         tree.preorder(root);
-
+        System.out.println();
+        tree.Inorder(root);
+        System.out.println();
+        tree.Postorder(root);
 
     }
 }
