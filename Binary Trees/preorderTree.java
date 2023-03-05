@@ -32,6 +32,19 @@ public class preorderTree {
                 return newNode;
 
         }
+
+        // Preorder Traversal
+
+        public static void preorder(Node root)
+        {
+            if(root==null)
+            {
+                return ;
+            }
+            System.out.println(root.data+ " ");
+            preorder(root.left);
+            preorder(root.right);
+        }
     }
     public static void main(String args[])
     {
@@ -39,5 +52,10 @@ public class preorderTree {
         BinaryTree tree= new BinaryTree();
         Node root= tree.buildTree(nodes);
         System.out.println(root.data);
+        System.out.println();
+
+        tree.preorder(root);
+
+
     }
 }
