@@ -44,6 +44,7 @@ public class heightTree {
 
     }
 
+    // Nodes Sum
     public static int sumNodes(Node root)
     {
         if(root==null)
@@ -73,6 +74,9 @@ public class heightTree {
             System.out.println();
 
             System.out.println(countNodes(root));
+
+            System.out.println();
+            System.out.println(sumNodes(root));
 
 
         }
