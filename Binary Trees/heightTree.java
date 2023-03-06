@@ -38,9 +38,9 @@ public class heightTree {
         {
             return 0;
         }
-        int lh= height(root.left);
-        int rh= height(root.right);
-        return Math.max(lh, rh)+1;
+        int lh= countNodes(root.left);
+        int rh= countNodes(root.right);
+        return  lh+rh+1;
 
     }
 
