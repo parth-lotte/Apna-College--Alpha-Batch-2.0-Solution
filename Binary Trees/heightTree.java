@@ -44,6 +44,20 @@ public class heightTree {
 
     }
 
+    public static int sumNodes(Node root)
+    {
+        if(root==null)
+
+        {
+            return 0;
+        }
+        int lh= sumNodes(root.left);
+        int rh=sumNodes(root.right);
+        return  lh+rh+root.data;
+
+    }
+    
+
         public static void main(String args[])
         {
 
