@@ -35,10 +35,52 @@ public class diameterTree {
         }
         int ld= diameter(root.left);
         int rd= diameter(root.right);
-        
-        int sd= ld+rd+1;
+        int lh= height(root.left);
+        int rh=height(root.right);
+        int sd= lh+rh+1;
 
         return Math.max(sd, Math.max(ld, rd));
+     }
+
+    // checking for isIdentical or not 
+    public static boolean isIdentical(Node node, Node subRoot)
+    {
+        if(node==null && subRoot==null)
+        {
+            return true;
+        }
+        else if(node==null || subRoot==null || node.data!=subRoot.data)
+        {
+            return false;
+        }
+        if(!isIdentical(node.left, subRoot.left))
+        {
+            return false;
+        }
+        if(!isIdentical(node.right, subRoot.right))
+        {
+            return false;
+        }
+
+        return true;
+         
+    }
+     //subtree In A tree
+
+     public static boolean isSubtree(Node root, Node subRoot )
+     {
+        if(root==null)
+        {
+            return false;
+        }
+        if(root.data==subRoot.data)
+        {
+            if(isIdentical(root,subRoot))
+            {
+                return true;
+            }
+        }
+            return isSubtree(root.left,subRoot) || isSubtree(root.right,subRoot); 
      }
     public static void main(String args[])
     {
@@ -53,6 +95,14 @@ public class diameterTree {
         System.out.println();
 
         System.out.println(diameter(root));
+
+        // subtreee
+
+        Node subRoot= new Node(2);
+        subRoot.left= new Node(4);
+        subRoot.right= new Node(5);
+
+        System.out.println(isSubtree(root, subRoot));
     }
     
 }

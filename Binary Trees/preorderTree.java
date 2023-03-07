@@ -56,9 +56,9 @@ public class preorderTree {
             {
                 return ;
             }
-            preorder(root.left);
+            Inorder(root.left);
             System.out.println(root.data+ " ");
-            preorder(root.right);
+            Inorder(root.right);
         }
         public static void Postorder(Node root)
         {
