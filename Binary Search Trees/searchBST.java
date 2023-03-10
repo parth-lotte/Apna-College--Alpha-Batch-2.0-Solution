@@ -1,3 +1,5 @@
+import javax.lang.model.util.ElementScanner14;
+
 public class searchBST{
 
     static class Node {
@@ -60,10 +62,55 @@ public class searchBST{
         }
     }
 
+        public static Node delete(Node root, int val)
+        {
+            if(root.data<val)
+            {
+                root.right=delete(root.right, val);
+            }
+            else if(root.data>val)
+            {
+                root.left=delete(root.left, val);
+            }
+            else {
+                if(root.left==null && root.right==null)
+                {
+                    return null;
+                } ///case 1
+                if(root.left==null)
+                {
+                    return root.right;
+                } //case 2
+                else if(root.right==null)
+                {
+                    return root.left;
+                }
+
+                // case 3
+                // both children
+
+                Node IS= findS(root.right);
+                root.data=IS.data;
+                root.right= delete(root.right, IS.data);
+            }
+            return root;
+        }
+
+        public static Node findS(Node root)
+        {
+
+            while(root.left!=null)
+            {
+                root=root.left;
+
+            }
+            return root;
+        }
+
 
     public static void main(String args[])
     {
-        int values[]={5,1,3,4,2,7};
+        int values[]={8,5,3,1,4,6,10,11,14};
         Node root=null;
 
         for(int i=0; i<values.length;i++)
@@ -82,5 +129,12 @@ public class searchBST{
         {
             System.out.println("Not Found");
         }
+
+        System.out.println();
+
+        root= delete(root, 1);
+        System.out.println();
+
+        inOrder(root);
     }
 }
