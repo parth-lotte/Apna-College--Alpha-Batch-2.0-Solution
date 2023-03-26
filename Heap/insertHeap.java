@@ -24,7 +24,7 @@ public class insertHeap{
 
         }
 
-        public int peek()                                 // peek in array 
+        public int peek()                           // peek in array 
         { 
             return arr.get(0);
         }
