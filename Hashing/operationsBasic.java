@@ -32,5 +32,14 @@ public class operationsBasic {
         System.out.println(hm);
         System.out.println(hm.remove("India"));
         System.out.println(hm);
+
+
+        // iterate 
+        Set <String> keys=hm.keySet();
+        System.out.println(keys);
+
+        for (String k : keys) {
+            System.out.println("key="+k+ "value="+hm.get(k));
+        }
     }
 }
