@@ -9,17 +9,21 @@ public class majorityElement {
         HashMap<Integer,Integer> hm= new HashMap<>();
         for(int i=0;i<arr.length;i++)
         {
-            if(hm.containsKey(arr[i]))
-            {
-                hm.put(arr[i],hm.get(arr[i])+1);
-            }
-            else {
-                hm.put(arr[i],1);
-            }
+            // if(hm.containsKey(arr[i]))
+            // {
+            //     hm.put(arr[i],hm.get(arr[i])+1);
+            // }
+            // else {
+            //     hm.put(arr[i],1);
+            // }
+
+            // We can write like this also
+
+            hm.put(arr[i],hm.getOrDefault(arr[i], 0)+1);
         }
 
-        Set<Integer> keySet= hm.keySet();
-        for(Integer key : keySet)
+        // Set<Integer> keySet= hm.keySet();
+        for(Integer key : hm.keySet())
         {
             if(hm.get(key)> arr.length/3)
             {
@@ -28,3 +32,6 @@ public class majorityElement {
         }
     }
 }
+
+
+// changed code 
