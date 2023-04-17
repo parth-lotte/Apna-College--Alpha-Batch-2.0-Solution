@@ -14,10 +14,18 @@ public class iterationHashsets {
 
         // Using iterator 
 
-        Iterator it = hs.iterator();
-        while(it.hasNext())
+        // Iterator it = hs.iterator();
+        // while(it.hasNext())
+        // {
+        // System.out.println(it.next());
+        // }
+
+
+        // using advanced for loop 
+
+        for(String it: hs)
         {
-        System.out.println(it.next());
+            System.out.println(it);
         }
     }
     
