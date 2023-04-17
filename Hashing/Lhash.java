@@ -1,7 +1,5 @@
-public class linkedHashset {
-    import java.util.HashSet;
-import java.util.Iterator;
-
+import java.util.*;
+public class Lhash{
 
     public static void main(String args[])
     {
@@ -27,6 +25,12 @@ import java.util.Iterator;
         {
             System.out.println(it);
         }
+        LinkedHashSet<String> lhs= new LinkedHashSet<>();
+
+        lhs.add("Delhi");
+        lhs.add("Bombay");
+        lhs.add("Chennai");
+        System.out.println(lhs);
     }
     
 }
