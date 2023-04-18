@@ -1,5 +1,5 @@
 import java.util.*;
-public class Lhash{
+public class LhashSet{
 
     public static void main(String args[])
     {
@@ -31,6 +31,12 @@ public class Lhash{
         lhs.add("Bombay");
         lhs.add("Chennai");
         System.out.println(lhs);
+
+        TreeSet<String> ts= new TreeSet<>();
+        ts.add("Delhi");
+        ts.add("USA");
+        ts.add("China");
+        System.out.println(ts);
     }
     
 }
